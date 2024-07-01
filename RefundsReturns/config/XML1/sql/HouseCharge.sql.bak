@@ -1,0 +1,3 @@
+SELECT 
+IMRACT AS FlexID, IMRDT2 as TerminationDate 
+FROM OWOCHM1P

@@ -1,0 +1,63 @@
+<PostXml3Parms>
+	<!--COMMON SYSTEM PARAMETERS-->
+	<system_parameters>
+		<log4j_config_path>properties/log4j.properties</log4j_config_path>
+		<store_number>71</store_number>
+	</system_parameters>
+	
+	<!--ISERIES CONNECTION PARAMETERS-->
+	<iseries_parameters>
+		<host>SYSTHREE</host>
+		<user>vbprocess</user>
+		<password>vbprocess</password>
+		<native_environment_flag>false</native_environment_flag>
+		<iseries_file_properties>properties/postXml3Files.properties</iseries_file_properties>
+	</iseries_parameters>
+
+	<!--MQ QUEUE MANAGER PARAMETERS-->
+	<queue_manager>
+		<host>SYSTHREE</host>
+		<queue_manager_name>SYS3.3</queue_manager_name>
+		<user>vbprocess</user>
+		<password>vbprocess</password>
+		<mq_channel>SYSTEM.DEF.SVRCONN</mq_channel>
+		<mq_port>1416</mq_port>
+	</queue_manager>
+
+	<!--XML3 SOURCE QUEUE PARAMETERS-->
+	<source_queue>
+		<queue_name>AS4.LA.OLTP.PUBLISH.0001</queue_name>
+		<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+		<browse_mode>true</browse_mode>
+	</source_queue>
+
+	<!--STORE CLOSED "PUT" QUEUE PARAMETERS-->
+	<store_closed_queue>
+		<queue_name>AS4.LA.OLTP.STATUS.0071</queue_name>
+	</store_closed_queue>
+	
+  <!--ERROR QUEUE PARAMETERS-->
+  <error_queue>
+    <queue_name>DL.SYS3.3</queue_name>
+    <queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+    <browse_mode>false</browse_mode>
+  </error_queue>
+	
+	<!--DO NOT IGNORE THESE TRANSACTION TYPES:-->
+	<keep_transaction_types>
+		<trans_type>transactionSale</trans_type>
+		<trans_type>transactionPostVoidSale</trans_type>
+		<trans_type>transactionStoreClosed</trans_type>
+		<trans_type>transactionTillOpen</trans_type>
+		<trans_type>transactionTillStatusChange</trans_type>
+		<trans_type>transactionLogon</trans_type>
+		<trans_type>transactionFloat</trans_type>
+		<trans_type>transactionInfo</trans_type>
+		<trans_type>transactionInvalidLogon</trans_type>
+		<trans_type>transactionNoSale</trans_type>
+		<trans_type>transactionLogoffNoSession</trans_type>
+		<trans_type>transactionStoreOpened</trans_type>	
+		<trans_type>terminate</trans_type>
+		<trans_type>transactionMediaExchange</trans_type>
+	</keep_transaction_types>
+</PostXml3Parms>

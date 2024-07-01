@@ -1,0 +1,21 @@
+<XMLBuildParms>
+  <log4j_config_path>properties/log4j.properties</log4j_config_path>
+  <OutputPathAndBaseName>/home/KTKWON/test</OutputPathAndBaseName>
+  <HostName>SYSTWO</HostName>
+  <User_id>ktkwon</User_id>
+  <Password>csyjk010</Password>
+  <Local>N</Local>
+  <BatchName>batch</BatchName>
+  <CalendarBuildYear>2007</CalendarBuildYear>
+  <BuildType>16</BuildType>
+  <ValidBuildTypes>1-Product, 2-Product Groups, 4-Calendar, 8-Associate, 16-Tax Code, 32-Product Stop</ValidBuildTypes>
+  <RunType>2</RunType>
+  <ValidRunTypes>1-Full Build, 2-Delta Build</ValidRunTypes>
+  <TransactionsPerFile>10000</TransactionsPerFile>
+  <Start_Optional_Section> This Section is Optional </Start_Optional_Section>
+  <TaxCodeBuildHostName></TaxCodeBuildHostName>
+  <TaxCodeBuildUser_id></TaxCodeBuildUser_id>
+  <TaxCodeBuildPassword></TaxCodeBuildPassword>
+  <TaxCodeSqlSelectStatement>Select vbtcdu1r() From TBLSTR Where STRNUM = 1</TaxCodeSqlSelectStatement>
+  <End_Optional_Section> This Section is Optional </End_Optional_Section>
+</XMLBuildParms>

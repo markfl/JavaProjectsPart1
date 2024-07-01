@@ -1,0 +1,351 @@
+15/Sep/2014 13:44:00   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+15/Sep/2014 13:44:00   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+15/Sep/2014 14:57:14   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+15/Sep/2014 14:57:14   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+15/Sep/2014 15:03:31   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+15/Sep/2014 15:03:31   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+15/Sep/2014 15:17:51   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+15/Sep/2014 15:17:51   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+16/Sep/2014 08:50:23   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+16/Sep/2014 08:50:23   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+16/Sep/2014 08:53:40   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+16/Sep/2014 08:53:40   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+16/Sep/2014 14:27:53   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+16/Sep/2014 14:27:53   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+16/Sep/2014 15:03:01   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+16/Sep/2014 15:03:01   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+16/Sep/2014 15:59:58   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+16/Sep/2014 15:59:58   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+17/Sep/2014 08:55:39   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+17/Sep/2014 08:55:39   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+17/Sep/2014 11:26:45   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+17/Sep/2014 11:26:45   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+30/Sep/2014 14:47:46   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+30/Sep/2014 14:47:46   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))
+30/Sep/2014 14:53:43   ERROR    com.basspro.bpsutils.Log [main] - Error in openQueueManager(). (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:212)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:318)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:338)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:84)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:168)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:772)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:697)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:657)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:153)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:451)
+	at com.basspro.jdaoutbound.router.TransactionRouter.openQueueManager(TransactionRouter.java:666)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:135)
+Caused by: 
+com.ibm.mqservices.MQInternalException: MQJE001: An MQException occurred: Completion Code 2, Reason 2058
+MQJE036: Queue manager rejected connection attempt
+	at com.ibm.mq.MQv6InternalCommunications.parseConnReply(MQv6InternalCommunications.java:1769)
+	at com.ibm.mq.MQv6InternalCommunications.connectToQueueManager(MQv6InternalCommunications.java:1707)
+	at com.ibm.mq.MQv6InternalCommunications.initialize(MQv6InternalCommunications.java:285)
+	at com.ibm.mq.MQv6InternalCommunications.<init>(MQv6InternalCommunications.java:109)
+	at com.ibm.mq.MQSESSIONClient.MQCONNX(MQSESSIONClient.java:1337)
+	at com.ibm.mq.MQSESSIONClient.MQCONN(MQSESSIONClient.java:1246)
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:184)
+	... 11 more
+30/Sep/2014 14:53:43   FATAL    com.basspro.bpsutils.Log [main] - Queue manager connection failed. Exiting. (com.basspro.bpsutils.Log.logMessage(Log.java:71))

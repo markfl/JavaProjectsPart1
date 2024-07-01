@@ -1,0 +1,3 @@
+SELECT
+EMPSS AS FlexID, Cast(EMPTER AS Char(8)) as TerminationDate
+FROM OWEMPW6P

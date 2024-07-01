@@ -1,0 +1,14 @@
+outputDirectory=/retail/XML3/Aspect
+outputFilePrefix=AspectLoad
+outputFileSuffix=.txt
+host=SYSTHREE
+username=VBPROCESS
+password=VBPROCESS
+ftpServer=srvlpcorp01.basspro.net
+ftpUser=BASSPRO\aspectlp
+ftpPassword=aspectlp
+ftpTargetDirectory=\AspectLP\
+ftpTargetFilePrefix=AspectTest
+20080101
+20081014
+20081014

@@ -1,0 +1,24 @@
+<CompanyOrgUnitDefaults>
+	<Companies>
+		<CompanyDefault>
+			<CompanyCode>C001</CompanyCode>
+			<Loyalty>1</Loyalty>
+			<Tax1> P</Tax1>
+			<Tax2>  </Tax2>
+			<Tax3>  </Tax3>
+			<Tax4>  </Tax4>
+			<BPSRegion>USA</BPSRegion>
+			<BPSCurrency>USD</BPSCurrency>
+		</CompanyDefault>
+		<CompanyDefault>
+			<CompanyCode>C002</CompanyCode>
+			<Loyalty>0</Loyalty>
+			<Tax1> P</Tax1>
+			<Tax2>  </Tax2>
+			<Tax3>  </Tax3>
+			<Tax4>  </Tax4>
+			<BPSRegion>CAN</BPSRegion>
+			<BPSCurrency>CAD</BPSCurrency>
+		</CompanyDefault>
+	</Companies>
+</CompanyOrgUnitDefaults>

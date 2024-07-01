@@ -1,0 +1,30 @@
+<XMLBuildParms>
+   <log4j_config_path>properties/log4j.properties</log4j_config_path>
+   <OutputPathAndBaseName>/home/KTKWON/test</OutputPathAndBaseName>
+   <HostName>SYSTWO</HostName>
+   <User_id>ktkwon</User_id>
+   <Password>csyjk010</Password>
+   <Local>N</Local>
+   <BatchName>batch</BatchName>
+   <CalendarBuildYear>2007</CalendarBuildYear>
+   <BuildType>1</BuildType>
+   <ValidBuildTypes>1-Product, 2-Product Groups, 4-Calendar, 8-Associate, 16-Tax Code, 32-Product Stop</ValidBuildTypes>
+   <RunType>2</RunType>
+   <ValidRunTypes>1-Full Build, 2-Delta Build</ValidRunTypes>
+   <TransactionsPerFile>10000</TransactionsPerFile>
+
+<Start_Optional_Section> This Section is Optional </Start_Optional_Section>
+   <ProductBuildHostName></ProductBuildHostName>
+   <ProductBuildUser_id></ProductBuildUser_id>
+   <ProductBuildPassword></ProductBuildPassword>
+   <ProductSqlSelectStatement1>Select e.posflg0, e.posflg1, e.posflg2, c.ilcod, c.dspncd, a.inumbr, a.idept, a.isdept,</ProductSqlSelectStatement1>
+   <ProductSqlSelectStatement2>a.iclas, a.isclas, a.isort, a.idescr, a.istyln, a.islum, a.istype, a.iprmpt, a.irplcd,</ProductSqlSelectStatement2>
+   <ProductSqlSelectStatement3>vbprdu1r(99999, a.inumbr, a.istyln, a.idept, a.isdept, a.iclas, a.isclas, a.iprmpt, e.posflg1) As xml1Deleta</ProductSqlSelectStatement3>
+   <ProductSqlSelectStatement4>From INVMST a Left Outer Join MRASDM1P c On a.inumbr = c.skunbr</ProductSqlSelectStatement4>
+   <ProductSqlSelectStatement5>Left Outer Join MRASDM2P e On a.inumbr = e.skunbr</ProductSqlSelectStatement5>
+   <ProductSqlSelectStatement6>Inner Join INVDPT f On a.idept  = f.idept And a.isdept = f.isdept And a.iclas = f.iclas And a.isclas = f.isclas</ProductSqlSelectStatement6>
+   <ProductSqlSelectStatement7>Where a.inumbr In (Select inumbr From INVUPC) And a.inumbr Not In (Select snumbr From INSMST)</ProductSqlSelectStatement7>
+   <ProductSqlSelectStatement8>And a.inumbr In (Select VBSKU from VBCHGH1P) </ProductSqlSelectStatement8>
+   <ProductSqlSelectStatement9>Order By a.inumbr</ProductSqlSelectStatement9>
+<End_Optional_Section> This Section is Optional </End_Optional_Section>
+</XMLBuildParms>

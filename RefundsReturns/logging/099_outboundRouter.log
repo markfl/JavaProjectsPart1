@@ -1,0 +1,15 @@
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - OutboundProcess.printMQException()-The MQGET failed. (com.basspro.bpsutils.Log.logMessage(Log.java:66))
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - OutboundProcess.printMQException()-CompletionCode = 2. (com.basspro.bpsutils.Log.logMessage(Log.java:66))
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - OutboundProcess.printMQException()-ReasonCode = 2009. (com.basspro.bpsutils.Log.logMessage(Log.java:66))
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - Trace: (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: Completion Code 2, Reason 2009
+	at com.ibm.mq.MQQueue.get(MQQueue.java:1034)
+	at com.basspro.jdaoutbound.router.TransactionRouter.getMessage(TransactionRouter.java:540)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:191)
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - shutdown()-Failure closing / disconnecting. MQJE001: Completion Code 2, Reason 2019 (com.basspro.bpsutils.Log.logMessage(Log.java:66))
+13/Nov/2014 14:13:08   ERROR    com.basspro.bpsutils.Log [main] - Trace: (com.basspro.bpsutils.Log.logMessage(Log.java:119))
+com.ibm.mq.MQException: MQJE001: Completion Code 2, Reason 2019
+	at com.ibm.mq.MQManagedObject.close(MQManagedObject.java:400)
+	at com.ibm.mq.MQQueue.close(MQQueue.java:1721)
+	at com.basspro.jdaoutbound.router.TransactionRouter.shutdown(TransactionRouter.java:787)
+	at com.basspro.jdaoutbound.router.TransactionRouter.main(TransactionRouter.java:309)

@@ -1,0 +1,12 @@
+bin/
+.classpath
+.project
+3rdParty/
+bpslibs/
+Libraries/
+CachedStores/
+KeyedFiles/
+.settings/
+logging/
+properties/
+.gitignore

@@ -1,0 +1,3 @@
+SELECT
+EMPSS AS FlexID, EMPTER as TerminationDate 
+FROM OWEMPW3P     

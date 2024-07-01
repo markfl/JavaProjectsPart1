@@ -1,0 +1,312 @@
+<root>
+<PostXML3Params>
+<!--COMMON SYSTEM PARAMETERS-->
+<system_parameters>
+<log4j_config_path>/retail/Apps/POS/V391/properties/log4j/log4j_Trans025.properties</log4j_config_path>
+<endconn_log4j_config_path>//retail/Apps/POS/V391/properties/log4j/log4j_EndStoreCon.properties</endconn_log4j_config_path>
+<services_parms_path>/retail/Apps/POS/V391/config/XML3/servicesParameters00025.xml</services_parms_path>
+<store_number>25</store_number>
+<classpath>.:/retail/Apps/POS/V391/3rdParty/JT400NATIVE.JAR:/retail/Apps/POS/V391/3rdParty/com.ibm.mq.jar:/retail/Apps/POS/V391/:/retail/Apps/POS/V391/configuration/:/retail/Apps/POS/V391/3rdParty/connector.jar:/retail/Apps/POS/V391/3rdParty/jta.jar:/retail/Apps/POS/V391/3rdParty/jdom.jar:/retail/Apps/POS/V391/3rdParty/log4j-1.2.14.jar:/retail/Apps/POS/V391/3rdParty/tssdk.jar:/retail/Apps/POS/V391/3rdParty/xerces.jar:/retail/Apps/POS/V391/BPSLibs/BPSCommonUtility.jar:/retail/Apps/POS/V391/BPSLibs/RetailXMLData.jar:</classpath>
+<start_program>com.basspro.retail.process.PostXml3TxnV391</start_program>
+<end_program>com.basspro.jdaoutbound.EndStoreConnection</end_program>
+<job_name>TRANS</job_name>
+<job_queue>VBPROCESS</job_queue>
+<init_heap_size>20480</init_heap_size>
+<max_heap_size>102400</max_heap_size>
+<process_to_sales_comparison>true</process_to_sales_comparison>
+<process_to_gearguard_supplemental>true</process_to_gearguard_supplemental>
+</system_parameters>
+<!--XML3 FILE HANDLING PARAMETERS-->
+<keyed_files>
+    <serialKeyedFilePrefix>/retail/Apps/POS/V391/KeyedFiles/</serialKeyedFilePrefix>
+    <serialKeyedFileExtension>.serial</serialKeyedFileExtension>
+</keyed_files>
+<file_handling>
+    <filePatternStartsWith>txn</filePatternStartsWith>
+    <filePatternContains>.xml</filePatternContains>
+    <folderName>/retail/replay</folderName>
+</file_handling>
+<!--XML3 SOURCE QUEUE PARAMETERS-->
+<source_queue>
+<queue_name>AS4.LA.OLTP.PUBLISH.3.XML3</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</source_queue>
+<!--STORE CLOSED QUEUE PARAMETERS-->
+<store_closed_queue>
+<queue_name>AS4.LA.OLTP.ENDCONN.3</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+</store_closed_queue>
+<!--GEAR GUARD HANDLING -->
+<gear_guard_handling>
+<process_only_refunds_in_gg_txn_hdr>true</process_only_refunds_in_gg_txn_hdr>
+<get_gg_sku_sql>select sku from owsvnm1p</get_gg_sku_sql>
+</gear_guard_handling>
+<information_line_handling>
+   	<get_info_line_sql>SELECT * FROM owpdic1p WHERE PCTOGGLE = 1</get_info_line_sql>	
+</information_line_handling>
+<!--ISERIES CONNECTION PARAMETERS-->
+<iseries_parameters>
+<host>SYSTHREE</host>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<native_environment_flag>true</native_environment_flag>
+<iseries_file_properties>/retail/Apps/POS/V391/properties/iseriesfiles/postXml3Files.properties</iseries_file_properties>
+<iseries_query_properties_file_name>/retail/Apps/POS/V391/config/iSeries/iSeriesQueryProperties.xml</iseries_query_properties_file_name>
+</iseries_parameters>
+<!--MQ QUEUE MANAGER PARAMETERS-->
+<queue_manager>
+<host>SYSTHREE</host>
+<queue_manager_name>QM_BPS_CORE</queue_manager_name>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<mq_channel>SYSTEM.ADMIN.SVRCONN</mq_channel>
+<mq_port>1428</mq_port>
+<end_store_mq_priority>9</end_store_mq_priority>
+</queue_manager>
+<database_parameters>
+<host>SYSTHREE</host>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<database_driver>com.ibm.as400.access.AS400JDBCDriver</database_driver>
+<database_url>jdbc:as400://SYSTHREE/;libraries=*LIBL;naming=system</database_url>
+</database_parameters>
+<!--TRANSACTION META DATA QUEUE-->
+<transaction_metadata_queue>
+<store_number>25</store_number>
+<local_queue_name>BPS_CORE.QL.OLTP.METADATA</local_queue_name>
+<alias_queue_name>AS4.LA.OLTP.METADATA</alias_queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+<threshold_minutes>10</threshold_minutes>
+<threshold_transactions>5000</threshold_transactions>
+</transaction_metadata_queue>
+<!--ERROR QUEUE PARAMETERS-->
+<error_queue>
+<queue_name>AS4.LA.OLTP.POSTXML3.ERROR</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</error_queue>
+<!--DO NOT IGNORE THESE TRANSACTION TYPES:-->
+<keep_transaction_types>
+<trans_type>transactionSale</trans_type>
+<trans_type>transactionPostVoidSale</trans_type>
+<trans_type>transactionStoreClosed</trans_type>
+<trans_type>transactionFloat</trans_type>
+<trans_type>transactionInfo</trans_type>
+<trans_type>transactionNoSale</trans_type>
+<trans_type>transactionStoreOpened</trans_type>
+<trans_type>terminate</trans_type>
+<trans_type>refresh</trans_type>
+<trans_type>transactionMediaExchange</trans_type>
+<trans_type>transactionPettyOut</trans_type>
+<trans_type>transactionPettyIn</trans_type>
+</keep_transaction_types>
+<!--NuBridges Encryption / Decryption Parms-->
+<!-- PRODUCTION SETTINGS (WITH RMI) -->
+<encryption_parms>
+<encryption_enabled>false</encryption_enabled>
+<decryption_enabled>true</decryption_enabled>
+<cash_audit_tender_work_file_resource>CC21A1</cash_audit_tender_work_file_resource>
+<credit_card_work_file_resource>CC19A1</credit_card_work_file_resource>
+<!--PROD RESOURCE:-->
+<pos_public_key_resource>PCMSRSC</pos_public_key_resource>
+<run_with_rmi_encryption>false</run_with_rmi_encryption>
+<rmi_url>rmi://SYSTHREE.basspro.net:1099/RemoteEncryption</rmi_url>
+</encryption_parms>
+</PostXML3Params>
+<EndOfDayParams>
+<!--COMMON SYSTEM PARAMETERS-->
+<system_parameters>
+<log4j_config_path>/retail/Apps/POS/V391/properties/log4j/log4j_Close025.properties</log4j_config_path>
+<endconn_log4j_config_path>//retail/Apps/POS/V391/properties/log4j/log4j_EndStoreCon.properties</endconn_log4j_config_path>
+<store_number>25</store_number>
+<classpath>.:/retail/Apps/POS/V391/3rdParty/JT400NATIVE.JAR:/retail/Apps/POS/V391/3rdParty/com.ibm.mq.jar:/retail/applications/vbsinterface:/retail/Apps/POS/V391/3rdParty/connector.jar:/retail/Apps/POS/V391/3rdParty/jta.jar:/retail/Apps/POS/V391/3rdParty/jdom.jar:/retail/Apps/POS/V391/3rdParty/jt400.jar:/retail/Apps/POS/V391/3rdParty/log4j-1.2.14.jar:/retail/Apps/POS/V391/BPSLibs/BPSCommonUtility.jar:</classpath>
+<start_program>com.basspro.jdaoutbound.endofday.PostXML3StoreClose</start_program>
+<end_program>com.basspro.jdaoutbound.EndStoreConnection</end_program>
+<job_name>CLOSE</job_name>
+<job_queue>VBPROCESS</job_queue>
+<init_heap_size>20480</init_heap_size>
+<max_heap_size>102400</max_heap_size>
+</system_parameters>
+<!--XML3 SOURCE QUEUE PARAMETERS-->
+<source_queue>
+<queue_name>AS4.LA.OLTP.STATUS.0025</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</source_queue>
+<!--ISERIES CONNECTION PARAMETERS-->
+<iseries_parameters>
+<host>SYSTHREE</host>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<native_environment_flag>true</native_environment_flag>
+<iseries_file_properties>/retail/Apps/POS/V391/properties/iseriesfiles/storeClosedFiles.properties</iseries_file_properties> 
+</iseries_parameters>
+<!--MQ QUEUE MANAGER PARAMETERS-->
+<queue_manager>
+<host>SYSTHREE</host>
+<queue_manager_name>QM_BPS_CORE</queue_manager_name>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<mq_channel>SYSTEM.ADMIN.SVRCONN</mq_channel>
+<mq_port>1428</mq_port>
+<end_store_mq_priority>9</end_store_mq_priority>
+</queue_manager>
+<!--ERROR QUEUE PARAMETERS-->
+<error_queue>
+<queue_name>AS4.LA.POSTXML3.ERROR</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</error_queue>
+<!--STORE CLOSED PROCESSOR PARAMETERS-->
+<store_closed_processor>
+<store_closed_delay_minutes>5</store_closed_delay_minutes>
+<operator_msg_queue>/QSYS.LIB/QSYSOPR.MSGQ</operator_msg_queue>
+<operator_reply_queue>/QSYS.LIB/QUSRSYS.LIB/VBPROCESS.MSGQ</operator_reply_queue>
+</store_closed_processor>
+<!--DO NOT IGNORE THESE TRANSACTION TYPES:-->
+<keep_transaction_types>
+<trans_type>transactionStoreClosed</trans_type>
+<trans_type>terminate</trans_type>
+<trans_type>refresh</trans_type>
+</keep_transaction_types>
+</EndOfDayParams>
+<ArchiveWtrParams>
+<system_parameters>
+<log4j_config_path>/retail/Apps/POS/V391/properties/log4j/log4j_archiveWriter025.properties</log4j_config_path>
+<endconn_log4j_config_path>//retail/Apps/POS/V391/properties/log4j/log4j_EndStoreCon.properties</endconn_log4j_config_path>
+<store_number>25</store_number>
+<classpath>.:/retail/Apps/POS/V391/3rdParty/JT400NATIVE.JAR:/retail/Apps/POS/V391/3rdParty/com.ibm.mq.jar:/retail/Apps/POS/V391/:/retail/Apps/POS/V391/config/:/retail/Apps/POS/V391/3rdParty/connector.jar:/retail/Apps/POS/V391/3rdParty/jta.jar:/retail/Apps/POS/V391/3rdParty/jdom.jar:/retail/Apps/POS/V391/3rdParty/log4j-1.2.14.jar:/retail/Apps/POS/V391/3rdParty/tssdk.jar:/retail/Apps/POS/V391/3rdParty/xerces.jar:/retail/Apps/POS/V391/BPSLibs/BPSCommonUtility.jar:</classpath>
+<start_program>com.basspro.jdaoutbound.lossprevention.ArchiveWriter</start_program>
+<end_program>com.basspro.jdaoutbound.EndStoreConnection</end_program>
+<job_name>ARCVWTR</job_name>
+<job_queue>VBPROCESS</job_queue>
+<init_heap_size>20480</init_heap_size>
+<max_heap_size>102400</max_heap_size>
+</system_parameters>
+<alert_settings>
+<!-- bad message warning: how many bad xml messages until we send alert-->
+<bad_message_warn_threshold>5</bad_message_warn_threshold>
+<!-- general exception: how many overall problems until we send alert-->
+<general_exception_warn_threshold>1</general_exception_warn_threshold>
+<!--bad state sleep timer:  how long to wait before we wake up and read from queue again:-->
+<bad_state_sleep_time_minutes>.5</bad_state_sleep_time_minutes>
+<mailserver_properties>/retail/Apps/POS/V391/config/XML3/mailserver.txt</mailserver_properties>
+<!--parameters for iSeries QSYSOPR queue: may not work when process' object/space limit reached-->
+<operator_msg_queue>/QSYS.LIB/QSYSOPR.MSGQ</operator_msg_queue>
+<operator_reply_queue>/QSYS.LIB/QUSRSYS.LIB/VBPROCESS.MSGQ</operator_reply_queue>
+</alert_settings>
+<!--ISERIES CONNECTION PARAMETERS-->
+<iseries_parameters>
+<host>SYSTHREE</host>
+<user>XMLBACK26</user>
+<password>XMLBACK26</password>
+<native_environment_flag>true</native_environment_flag>
+</iseries_parameters>
+<!--MQ QUEUE MANAGER PARAMETERS-->
+<queue_manager>
+<host>SYSTHREE</host>
+<queue_manager_name>QM_BPS_CORE</queue_manager_name>
+<user>XMLBACK26</user>
+<password>XMLBACK26</password>
+<mq_channel>SYSTEM.ADMIN.SVRCONN</mq_channel>
+<mq_port>1428</mq_port>
+<end_store_mq_priority>9</end_store_mq_priority>
+</queue_manager>
+<!--ERROR QUEUE PARAMETERS-->
+<error_queue>
+<queue_name>AS4.LA.OLTP.POSTXML3.ERROR.IFS</queue_name>
+<!--queue_name>BPS_CORE.QL.OLTP.POSTXML3.ERROR.IFS</queue_name-->
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</error_queue>
+<!--SOURCE QUEUE PARAMETERS-->
+<source_queue>
+<!--queue_name>BPS_CORE.QL.OLTP.PUBLISH.IFS</queue_name-->
+<queue_name>AS4.LA.OLTP.PUBLISH.IFS</queue_name>
+<queue_mq_wait_interval_milliseconds>2000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</source_queue>
+</ArchiveWtrParams>
+<RouterParams>
+<system_parameters>
+<log4j_config_path>/retail/Apps/POS/V391/properties/log4j/log4j_outboundRouter025.properties</log4j_config_path>
+<endconn_log4j_config_path>//retail/Apps/POS/V391/properties/log4j/log4j_EndStoreCon.properties</endconn_log4j_config_path>
+<store_number>25</store_number>
+<classpath>.:/retail/Apps/POS/V391/3rdParty/JT400NATIVE.JAR:/retail/Apps/POS/V391/3rdParty/com.ibm.mq.jar:/retail/Apps/POS/V391/:/retail/Apps/POS/V391/configuration/:/retail/Apps/POS/V391/3rdParty/connector.jar:/retail/Apps/POS/V391/3rdParty/jta.jar:/retail/Apps/POS/V391/3rdParty/jdom.jar:/retail/Apps/POS/V391/3rdParty/log4j-1.2.14.jar:/retail/Apps/POS/V391/3rdParty/tssdk.jar:/retail/Apps/POS/V391/3rdParty/xerces.jar:/retail/Apps/POS/V391/BPSLibs/BPSCommonUtility.jar:</classpath>
+<start_program>com.basspro.jdaoutbound.router.TransactionRouter</start_program>
+<end_program>com.basspro.jdaoutbound.EndStoreConnection</end_program>
+<job_name>ROUTR</job_name>
+<job_queue>VBPROCESS</job_queue>
+<init_heap_size>20480</init_heap_size>
+<max_heap_size>102400</max_heap_size>
+</system_parameters>
+<!--ISERIES CONNECTION PARAMETERS-->
+<iseries_parameters>
+<host>SYSTHREE</host>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<native_environment_flag>true</native_environment_flag>
+</iseries_parameters>
+<!--MQ QUEUE MANAGER PARAMETERS-->
+<queue_manager>
+<host>SYSTHREE</host>
+<queue_manager_name>QM_BPS_CORE</queue_manager_name>
+<user>VBPROCESS</user>
+<password>VBPROCESS</password>
+<mq_channel>SYSTEM.ADMIN.SVRCONN</mq_channel>
+<mq_port>1428</mq_port>
+<end_store_mq_priority>9</end_store_mq_priority>
+</queue_manager>
+<!--ERROR QUEUE PARAMETERS-->
+<error_queue>
+<queue_name>AS4.LA.OLTP.POSTXML3.ERROR</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</error_queue>
+<!--SOURCE QUEUE PARAMETERS-->
+<source_queue>
+<queue_name>AS4.LA.OLTP.PUBLISH.3</queue_name>
+<queue_mq_wait_interval_milliseconds>2000</queue_mq_wait_interval_milliseconds>
+<browse_mode>false</browse_mode>
+</source_queue>
+<!--ROUTE LIST-->
+<route_list>
+<queue>
+<queue_name>AS4.LA.OLTP.PUBLISH.3.XML3</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<commit_dependent>true</commit_dependent>
+<!--route_logic has attribute 'behavior' can be set to 'selective' or 'all', if selective, specify a repeated list of wanted trans_type's in this element-->
+<route_logic behavior="selective">
+<trans_type>transactionSale</trans_type>
+<trans_type>transactionPostVoidSale</trans_type>
+<trans_type>transactionStoreClosed</trans_type> 
+<trans_type>transactionFloat</trans_type>
+<trans_type>transactionInfo</trans_type>
+<trans_type>terminate</trans_type>
+<trans_type>refresh</trans_type>
+<trans_type>transactionMediaExchange</trans_type>
+<trans_type>transactionPettyOut</trans_type>
+<trans_type>transactionPettyIn</trans_type>
+</route_logic>
+</queue>
+<queue>
+<queue_name>AS4.LA.OLTP.PUBLISH.IFS</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<commit_dependent>true</commit_dependent>
+<!--route_logic has attribute 'behavior' can be set to 'selective' or 'all', if selective, specify a repeated list of wanted trans_type's in this element-->
+<route_logic behavior="all">
+</route_logic>
+</queue>
+<queue>
+<queue_name>AS4.LA.OLTP.PUBLISH.3.LOSS</queue_name>
+<queue_mq_wait_interval_milliseconds>15000</queue_mq_wait_interval_milliseconds>
+<commit_dependent>true</commit_dependent>
+<!--route_logic has attribute 'behavior' can be set to 'selective' or 'all', if selective, specify a repeated list of wanted trans_type's in this element-->
+<route_logic behavior="all">
+</route_logic>
+</queue>
+</route_list>
+</RouterParams>
+</root>

@@ -1,0 +1,15 @@
+<PostXml3Parms>
+	<!--UNIX SYSTEM PARAMETERS-->
+	<system_parameters_unix>
+		<url>jdbc:db2://CBSPCDB:60000/CDB</url>
+		<userid>BP_CDB</userid>
+		<password>y%4zFU3R</password>
+	</system_parameters_unix>
+	
+	<!--ISERIES CONNECTION PARAMETERS-->
+	<iseries_parameters>
+		<host>as400.mandh.us</host>
+		<user>mflores</user>
+		<password>Kr@m7713</password>
+	</iseries_parameters>
+</PostXml3Parms>

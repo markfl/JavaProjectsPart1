@@ -1,0 +1,114 @@
+<root>
+	<services>
+		<taxed_sales_amount>
+			<mq_properties>  
+				<connection>
+					<host>SYSTHREE</host>
+					<channel>SYSTEM.ADMIN.SVRCONN</channel>
+					<port>1415</port>
+					<username>VBPROCESS</username>
+					<password>VBPROCESS</password>
+					<manager_name>SYS3.2</manager_name>     
+				</connection>
+				<queue>
+					<request_name>AS4.LA.TAXED.SALES.REQ.4</request_name>
+					<!-- USE A COMMA TO SEPARATE THE FOLLOWING OPTIONS -->
+					<request_open_options>MQC.MQOO_OUTPUT,MQC.MQOO_FAIL_IF_QUIESCING</request_open_options>     
+					<response_name>AS4.LA.TAXED.SALES.RSP.4</response_name>
+					<!-- USE A COMMA TO SEPARATE THE FOLLOWING OPTIONS -->
+					<response_open_options>MQC.MQOO_INPUT_SHARED,MQC.MQOO_FAIL_IF_QUIESCING,MQC.MQOO_BROWSE</response_open_options>
+					<services_error_name>AS4.LA.RETAIL.SERVICES.ERROR</services_error_name>
+					<!-- USE A COMMA TO SEPARATE THE FOLLOWING OPTIONS -->
+					<services_error_open_options>MQC.MQOO_OUTPUT,MQC.MQOO_FAIL_IF_QUIESCING</services_error_open_options>     
+				</queue>
+				<get_put>
+					<!-- USE A COMMA TO SEPARATE THE FOLLOWING OPTIONS -->
+					<get_options>MQC.MQGMO_FAIL_IF_QUIESCING,MQC.MQGMO_WAIT,MQC.MQGMO_CONVERT</get_options>
+					<put_options></put_options>
+					<get_mq_wait_ms>3000</get_mq_wait_ms>
+				</get_put>
+			</mq_properties>
+			<request_queue>
+				<queue_connection>
+					<queue_manager>
+						<host>SYSTHREE</host>
+						<channel>SYSTEM.ADMIN.SVRCONN</channel>
+						<port>1415</port>
+						<username>VBPROCESS</username>
+						<password>VBPROCESS</password>
+						<manager_name>SYS3.2</manager_name>
+    				</queue_manager>
+					<queue_name>AS4.LA.TAXED.SALES.REQ.4</queue_name>
+					<put_messages>true</put_messages>
+					<get_messages>false</get_messages>
+					<default_priority></default_priority>
+					<default_persistence></default_persistence>
+					<!-- equivalent of MQC.MQOO_OUTPUT | MQC.MQOO_FAIL_IF_QUIESCING; -->
+					<queue_open_options>8208</queue_open_options>
+					<message_get_options>
+						<options></options>
+						<waitInterval></waitInterval>
+					</message_get_options>
+					<message_put_options>
+						<!-- MQC.MQPMO_FAIL_IF_QUIESCING | MQC.MQPMO_NO_SYNCPOINT; -->
+						<options>8196</options>
+					</message_put_options>
+				</queue_connection>
+			</request_queue>
+			<response_queue>
+				<queue_connection>
+					<queue_manager>
+						<host>SYSTHREE</host>
+						<channel>SYSTEM.ADMIN.SVRCONN</channel>
+						<port>1415</port>
+						<username>VBPROCESS</username>
+						<password>VBPROCESS</password>
+						<manager_name>SYS3.2</manager_name>
+					</queue_manager>
+					<queue_name>AS4.LA.TAXED.SALES.RSP.4</queue_name>
+					<put_messages>false</put_messages>
+					<get_messages>true</get_messages>
+					<default_priority></default_priority>
+					<default_persistence></default_persistence>
+					<!-- equivalent of MQC.MQOO_INPUT_SHARED | MQC.MQOO_FAIL_IF_QUIESCING | MQC.MQOO_BROWSE -->
+					<queue_open_options>8202</queue_open_options>
+					<message_get_options>
+						<!-- MQC.MQGMO_FAIL_IF_QUIESCING | MQC.MQGMO_SYNCPOINT | MQC.MQGMO_WAIT | MQC.MQGMO_CONVERT; -->
+						<options>24581</options>
+						<waitInterval>9000</waitInterval>
+					</message_get_options>
+					<message_put_options>
+						<options></options>
+					</message_put_options>
+				</queue_connection>
+			</response_queue>
+			<error_queue>
+				<queue_connection>
+						<queue_manager>
+						<host>SYSTHREE</host>
+						<channel>SYSTEM.ADMIN.SVRCONN</channel>
+						<port>1415</port>
+						<username>VBPROCESS</username>
+						<password>VBPROCESS</password>
+						<manager_name>SYS3.2</manager_name>
+						</queue_manager>
+						<queue_name>AS4.LA.RETAIL.SERVICES.ERROR</queue_name>
+						<put_messages>true</put_messages>
+						<get_messages>false</get_messages>
+						<default_priority></default_priority>
+						<default_persistence></default_persistence>
+						<!-- equivalent of MQC.MQOO_OUTPUT | MQC.MQOO_FAIL_IF_QUIESCING; -->
+						<queue_open_options>8208</queue_open_options>
+						<message_get_options>
+							<options></options>
+							<waitInterval></waitInterval>
+						</message_get_options>
+						<message_put_options>
+							<!-- MQC.MQPMO_FAIL_IF_QUIESCING | MQC.MQPMO_NO_SYNCPOINT; -->
+							<options>8196</options>
+						</message_put_options>
+				</queue_connection>
+			</error_queue>
+		</taxed_sales_amount>
+	</services>
+</root>

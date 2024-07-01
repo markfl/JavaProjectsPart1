@@ -1,0 +1,10 @@
+<EncryptionServer>
+	<system_parameters>
+		<log4j_config_path>/retail/applications/vbsinterface/properties/log4j_rmiservlet.properties</log4j_config_path>
+		<sleep_timer_milliseconds>5000</sleep_timer_milliseconds>
+	</system_parameters>
+	<connection>
+		<port>1099</port>
+		<context_root>/RemoteEncryption</context_root>
+	</connection>
+</EncryptionServer>

@@ -1,0 +1,7 @@
+<XMLBuildParms>
+  <log4j_config_path>/retail/applications/vbsinterface/properties/log4j_xml1/log4j_XML1.properties</log4j_config_path>
+  <HostName>SYSTHREE</HostName>
+  <User_id>vbprocess</User_id>
+  <Password>vbprocess</Password>
+  <Port>13880</Port>
+</XMLBuildParms>

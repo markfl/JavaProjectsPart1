@@ -1,0 +1,34 @@
+<EndVendorSettlementParms>
+	<!-- These parms define the iSeries Access and the MQ queue being -->
+      <!-- used for ending the Vendor Settlement -->
+
+	<!--COMMON SYSTEM PARAMETERS-->
+	<system_parameters>
+		<log4j_config_path>properties/log4j.properties</log4j_config_path>
+	</system_parameters>
+	
+	<!--ISERIES CONNECTION PARAMETERS-->
+	<iseries_parameters>
+		<host>ISDEV</host>
+		<user>GCPROCESS</user>
+		<password>GCPROCESS</password>
+	</iseries_parameters>
+
+	<!--MQ QUEUE MANAGER PARAMETERS-->
+	<queue_manager>
+		<host>SYSTHREE</host>
+		<queue_manager_name>SYS3.3</queue_manager_name>
+		<user>GCPROCESS</user>
+		<password>GCPROCESS</password>
+		<mq_channel>SYSTEM.DEF.SVRCONN</mq_channel>
+		<mq_port>1416</mq_port>
+	</queue_manager>
+
+	<!--VENDOR SETTLEMENT SOURCE QUEUE PARAMETERS-->
+	<source_queue>
+		<queue_name>AS4.LA.OLTP.SETTLEMENT</queue_name>
+		<queue_mq_wait_interval_milliseconds>5000</queue_mq_wait_interval_milliseconds>
+   		<vndr_stlmnt_mq_priority>9</vndr_stlmnt_mq_priority>
+	</source_queue>
+</EndVendorSettlementParms>
+

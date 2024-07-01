@@ -1,0 +1,12 @@
+Select
+e.posflg0, e.posflg1, e.posflg2, c.ilcod, c.dspncd, d.vbsku as inumbr, a.idept, a.isdept,
+a.iclas, a.isclas, a.isort, a.idescr, a.istyln, a.islum, a.istype, a.iprmpt, a.irplcd,
+vbprdu1r(99999, d.vbsku, d.vbupc, d.vbskuc, d.vbupcc, d.vbprgc)
+As xml1Deleta
+From VBCHGM1P d
+Left Join INVMST a On d.vbsku = a.inumbr
+Left Join MRASDM1P c On d.vbsku = c.skunbr
+Left Join MRASDM2P e On d.vbsku = e.skunbr
+Where
+d.vbsku Not In (Select snumbr From INSMST)
+Order By d.vbsku, rrn(d)
