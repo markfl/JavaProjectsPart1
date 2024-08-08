@@ -1,0 +1,17 @@
+{
+	"system_parameters_unix": {
+		"host": "jdbc:db2://unix:60000/CDB",
+		"userid": "userid",
+		"password": "userpassword"
+	},
+	"iseries_parameters_iseries1": {
+		"host": "as400_1.com",
+		"user": "userid",
+		"password": "userpassword"
+	},
+	"iseries_parameters_iseries2": {
+		"host": "as400_2.com",
+		"user": "userid",
+		"password": "userpassword"
+	}
+}

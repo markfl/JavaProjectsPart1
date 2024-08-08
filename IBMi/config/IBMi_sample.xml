@@ -1,0 +1,20 @@
+<PostXml3Parms>
+	<!--UNIX SYSTEM PARAMETERS-->
+	<system_parameters_unix>
+		<url>jdbc:db2://unix:60000/CDB</url>
+		<userid>userid</userid>
+		<password>userpassword</password>
+	</system_parameters_unix>
+	
+	<!--ISERIES CONNECTION PARAMETERS-->
+	<iseries_parameters_westend>
+		<host>as400_1.com</host>
+		<user>userid</user>
+		<password>userpassword</password>
+	</iseries_parameters_westend>
+	<iseries_parameters_walsworth>
+		<host>as400_2.com</host>
+		<user>userid</user>
+		<password>userpassword</password>
+	</iseries_parameters_walsworth>
+</PostXml3Parms>
